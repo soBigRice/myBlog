@@ -1,8 +1,8 @@
 /*
  * @Author: superRice
  * @Date: 2025-04-11 11:20:15
- * @LastEditors: superRice 1246333567@qq.com
- * @LastEditTime: 2025-04-11 16:15:41
+ * @LastEditors: soBigRice soBigRice@users.noreply.github.com
+ * @LastEditTime: 2025-04-12 17:18:39
  * @FilePath: /satelliteForRice/src/App.jsx
  * @Description:
  * Do your best to be yourself
@@ -12,6 +12,11 @@
 
 import "./App.css";
 import NavigationBar from "./components/NavigationBar";
+import { RouterProvider } from "react-router-dom";
+import BottomBar from "./components/BottomBar";
+import router from "./router";
+import { CSSTransition, SwitchTransition } from "react-transition-group";
+
 function App() {
   return (
     <>
@@ -19,8 +24,13 @@ function App() {
         <div className="header">
           <NavigationBar />
         </div>
-        <div className="content">内容</div>
-        <div className="footer">底部</div>
+        <div className="content">
+          <RouterProvider router={router} />
+        </div>
+
+        <div className="footer">
+          <BottomBar />
+        </div>
       </div>
     </>
   );

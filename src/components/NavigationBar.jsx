@@ -1,3 +1,13 @@
+/*
+ * @Author: superRice
+ * @Date: 2025-04-11 16:12:52
+ * @LastEditors: soBigRice soBigRice@users.noreply.github.com
+ * @LastEditTime: 2025-04-12 16:02:56
+ * @FilePath: /satelliteForRice/src/components/NavigationBar.jsx
+ * @Description:
+ * Do your best to be yourself
+ * Copyright (c) 2025 by superRice, All Rights Reserved.
+ */
 import "./NavigationBar.css";
 import { useEffect, useRef } from "react";
 
@@ -7,11 +17,12 @@ function NavigationBar() {
 
   // 导航按钮数据
   const buttons = [
-    { name: "首页", url: "#" },
-    { name: "项目", url: "#" },
-    { name: "关于我", url: "#" },
+    { name: "首页", url: "/" },
+    { name: "案例", url: "#" },
     { name: "博客", url: "#" },
-    { name: "联系", url: "#" },
+    { name: "今日天气", url: "#" },
+    { name: "每日一言", url: "/dailyHeart" },
+    { name: "关于我", url: "#" },
   ];
 
   // 鼠标移入时更新指示器的位置和宽度，并触发水滴融合动画
@@ -74,6 +85,7 @@ function NavigationBar() {
           href={btn.url}
           onMouseEnter={handleMouseEnter}
           onClick={() => handleClick(btn)}
+          data-text={btn.name}
         >
           {btn.name}
         </a>

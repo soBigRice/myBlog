@@ -3,7 +3,8 @@
   display: flex;
   justify-content: center;
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(15px);
+
   -webkit-backdrop-filter: blur(10px);
   border-radius: 12px;
   padding: 2px 20px;
@@ -13,24 +14,38 @@
   -moz-border-radius: 12px;
   -ms-border-radius: 12px;
   -o-border-radius: 12px;
+  box-shadow: 0 0 10px rgb(255, 255, 255, 0.2);
 }
 
 .navbar a {
   position: relative;
   padding: 10px 10px;
-  color: rgb(163, 163, 163);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
   text-decoration: none;
   font-size: 18px;
-  z-index: 1;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .navbar a:hover {
   color: rgb(255, 255, 255);
+  /*可以叠加多层制造厚重感*/
+  /* filter: blur(10px); */
+  /* -webkit-filter: blur(10px); */
+}
+.navbar a::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 1;
+  left: 0;
+  color: inherit; /* 可根据需要调整颜色 */
+  z-index: -1; /* 放到文字后面 */
+  filter: blur(10px);
+  -webkit-filter: blur(10px);
 }
 .navbar a:active {
   color: rgb(144, 255, 240);
   text-shadow: 0 0 3px rgb(144, 255, 240), 0 0 6px rgb(144, 255, 240),
-    0 0 9px rgb(144, 255, 240); /* 可以叠加多层制造厚重感 */
+    0 0 9px rgb(144, 255, 240);
 }
 
 /* 指示器默认状态：矩形带圆角 */
@@ -47,6 +62,7 @@
   transform: translateY(-50%);
   transition: left 0.4s ease, width 0.4s ease;
   z-index: 0;
+  box-shadow: 0 0 10px rgb(255, 255, 255, 0.2);
 }
 
 /* 融合动画：模拟水滴在移动过程中的拉伸与收缩 */
