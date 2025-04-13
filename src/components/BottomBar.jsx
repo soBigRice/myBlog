@@ -2,7 +2,7 @@
  * @Author: superRice
  * @Date: 2025-04-12 15:52:55
  * @LastEditors: soBigRice soBigRice@users.noreply.github.com
- * @LastEditTime: 2025-04-12 15:53:43
+ * @LastEditTime: 2025-04-13 11:09:00
  * @FilePath: /satelliteForRice/src/components/BottomBar.jsx
  * @Description:
  * Do your best to be yourself
@@ -12,7 +12,7 @@ const BottomBar = () => {
   return (
     <>
       <div>
-        <div>底部菜单栏</div>
+        <div>底部菜单栏2</div>
       </div>
     </>
   );
