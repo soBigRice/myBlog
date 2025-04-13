@@ -1,28 +1,56 @@
-name: Deploy to GitHub Pages
+name: 🚀 Deploy Vite React App to GitHub Pages
 
-# 触发条件：每次推送到 main 分支时运行
 on:
   push:
+    branches:
+      - main # 每次推送到 main 分支就触发
+  pull_request:
+    types:
+      - closed
     branches:
       - main
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
-      # 第一步：拉取代码
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      # 第二步：安装依赖并构建（如果有构建步骤）
-      - name: Install and build
+      - name: Set up GitHub Actions bot commit email
         run: |
-          npm install
-          npm run build
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
 
-      # 第三步：将构建后的文件推送到 GitHub Pages
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20 # 设定 Node.js 版本，和你本地统一（建议 Node 18/20）
+
+      - name: Cache node_modules
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Vite project
+        run: npm run build
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build # 修改为构建输出的文件夹路径
+          publish_dir: ./dist # 注意：Vite build 默认输出 dist 文件夹
+
+      - name: Comment deployment status
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: deployment-status
+          message: |
+            🚀 部署成功！预览链接：[点击查看](https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }})
