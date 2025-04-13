@@ -45,8 +45,10 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist # 注意：Vite build 默认输出 dist 文件夹
+          personal_token: ${{ secrets.PERSONAL_TOKEN }}
+          external_repository: soBigRice/myBlog
+          publish_dir: ./dist
+          publish_branch: gh-pages
 
       - name: Comment deployment status
         uses: marocchino/sticky-pull-request-comment@v2
