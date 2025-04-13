@@ -17,7 +17,7 @@
   box-shadow: 0 0 10px rgb(255, 255, 255, 0.2);
 }
 
-.navbar a {
+.navbar .navbar-link {
   position: relative;
   padding: 10px 10px;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
@@ -26,13 +26,13 @@
   color: rgba(255, 255, 255, 0.5);
 }
 
-.navbar a:hover {
+.navbar .navbar-link:hover {
   color: rgb(255, 255, 255);
   /*可以叠加多层制造厚重感*/
   /* filter: blur(10px); */
   /* -webkit-filter: blur(10px); */
 }
-.navbar a::before {
+.navbar .navbar-link::before {
   content: attr(data-text);
   position: absolute;
   top: 1;
@@ -42,7 +42,7 @@
   filter: blur(10px);
   -webkit-filter: blur(10px);
 }
-.navbar a:active {
+.navbar .navbar-link:active {
   color: rgb(144, 255, 240);
   text-shadow: 0 0 3px rgb(144, 255, 240), 0 0 6px rgb(144, 255, 240),
     0 0 9px rgb(144, 255, 240);

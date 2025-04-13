@@ -2,7 +2,7 @@
  * @Author: superRice
  * @Date: 2025-04-11 16:12:52
  * @LastEditors: soBigRice soBigRice@users.noreply.github.com
- * @LastEditTime: 2025-04-12 16:02:56
+ * @LastEditTime: 2025-04-13 09:10:20
  * @FilePath: /satelliteForRice/src/components/NavigationBar.jsx
  * @Description:
  * Do your best to be yourself
@@ -10,6 +10,7 @@
  */
 import "./NavigationBar.css";
 import { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 
 function NavigationBar() {
   const navbarRef = useRef(null); // 导航栏 DOM 引用
@@ -18,11 +19,11 @@ function NavigationBar() {
   // 导航按钮数据
   const buttons = [
     { name: "首页", url: "/" },
-    { name: "案例", url: "#" },
-    { name: "博客", url: "#" },
-    { name: "今日天气", url: "#" },
+    { name: "案例", url: "/example" },
+    { name: "博客", url: "/blog" },
+    { name: "今日天气", url: "/weather" },
     { name: "每日一言", url: "/dailyHeart" },
-    { name: "关于我", url: "#" },
+    { name: "关于我", url: "/about" },
   ];
 
   // 鼠标移入时更新指示器的位置和宽度，并触发水滴融合动画
@@ -79,16 +80,26 @@ function NavigationBar() {
       {/* 指示器：负责展示水滴的融合和按压动画 */}
       <div className="hover-indicator" ref={indicatorRef}></div>
       {/* 渲染导航按钮 */}
+
       {buttons.map((btn, index) => (
-        <a
+        <Link
+          className="navbar-link"
+          to={btn.url}
           key={index}
-          href={btn.url}
-          onMouseEnter={handleMouseEnter}
           onClick={() => handleClick(btn)}
-          data-text={btn.name}
+          onMouseEnter={handleMouseEnter}
         >
           {btn.name}
-        </a>
+        </Link>
+        // <a
+        //   href={btn.url}
+        //   key={index}
+        //   onMouseEnter={handleMouseEnter}
+        //   onClick={() => handleClick(btn)}
+        //   data-text={btn.name}
+        // >
+        //   {btn.name}
+        // </a>
       ))}
     </div>
   );

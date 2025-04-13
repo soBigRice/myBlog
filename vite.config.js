@@ -1,8 +1,8 @@
 /*
  * @Author: superRice
  * @Date: 2025-04-11 11:20:15
- * @LastEditors: superRice 1246333567@qq.com
- * @LastEditTime: 2025-04-11 13:09:19
+ * @LastEditors: soBigRice soBigRice@users.noreply.github.com
+ * @LastEditTime: 2025-04-12 18:32:58
  * @FilePath: /satelliteForRice/vite.config.js
  * @Description:
  * Do your best to be yourself
@@ -17,4 +17,5 @@ export default defineConfig({
   server: {
     host: "0.0.0.0",
   },
+  base: "./",
 });
