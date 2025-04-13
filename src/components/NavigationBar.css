@@ -112,3 +112,7 @@
     border-radius: 12px;
   }
 }
+
+.navbar .navbar-link.active {
+  color: rgb(255, 255, 255);
+}
