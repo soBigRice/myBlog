@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout satelliteForRice source code
         uses: actions/checkout@v4
 
       - name: Set up GitHub Actions bot commit email
@@ -55,4 +55,4 @@ jobs:
         with:
           header: deployment-status
           message: |
-            🚀 部署成功！预览链接：[点击查看](https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }})
+            🚀 部署成功！预览链接：[点击查看](https://sobigrice.github.io/myBlog/)
