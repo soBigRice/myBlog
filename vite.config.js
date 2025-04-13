@@ -1,4 +1,3 @@
-/Users/superrice/MyPersionFile/CodeWork/CodePublic/satelliteForRice/vite.config.js
 /*
  * @Author: superRice
  * @Date: 2025-04-11 11:20:15
