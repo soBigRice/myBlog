@@ -1,8 +1,9 @@
 import "./NavigationBar.css";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 function NavigationBar() {
+  const [isHovering, setIsHovering] = useState(false);
   const navbarRef = useRef(null); // 导航栏 DOM 引用
   const indicatorRef = useRef(null); // 指示器 DOM 引用
   const location = useLocation();
@@ -20,6 +21,7 @@ function NavigationBar() {
 
   // 鼠标移入时更新指示器的位置和宽度，并触发水滴融合动画
   const handleMouseEnter = (e) => {
+    setIsHovering(true);
     const rect = e.target.getBoundingClientRect();
     const navbarRect = navbarRef.current.getBoundingClientRect();
     const newLeft = rect.left - navbarRect.left;
@@ -34,6 +36,17 @@ function NavigationBar() {
       indicatorRef.current.classList.remove("animate");
       void indicatorRef.current.offsetWidth; // 触发 reflow
       indicatorRef.current.classList.add("animate");
+    }
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovering(false);
+    const activeLink = navbarRef.current.querySelector("a.active");
+    if (activeLink && indicatorRef.current) {
+      const rect = activeLink.getBoundingClientRect();
+      const navbarRect = navbarRef.current.getBoundingClientRect();
+      indicatorRef.current.style.left = `${rect.left - navbarRect.left}px`;
+      indicatorRef.current.style.width = `${rect.width}px`;
     }
   };
 
@@ -56,19 +69,19 @@ function NavigationBar() {
 
   // 组件加载时，初始化指示器的位置和宽度基于第一个按钮
   useEffect(() => {
-    if (navbarRef.current && indicatorRef.current) {
-      const firstLink = navbarRef.current.querySelector("a");
-      if (firstLink) {
-        const rect = firstLink.getBoundingClientRect();
+    if (navbarRef.current && indicatorRef.current && !isHovering) {
+      const activeLink = navbarRef.current.querySelector("a.active");
+      if (activeLink) {
+        const rect = activeLink.getBoundingClientRect();
         const navbarRect = navbarRef.current.getBoundingClientRect();
         indicatorRef.current.style.left = `${rect.left - navbarRect.left}px`;
         indicatorRef.current.style.width = `${rect.width}px`;
       }
     }
-  }, []);
+  }, [location.pathname, isHovering]);
 
   return (
-    <div className="navbar" ref={navbarRef}>
+    <div className="navbar" ref={navbarRef} onMouseLeave={handleMouseLeave}>
       {/* 指示器：负责展示水滴的融合和按压动画 */}
       <div className="hover-indicator" ref={indicatorRef}></div>
       {/* 渲染导航按钮 */}
