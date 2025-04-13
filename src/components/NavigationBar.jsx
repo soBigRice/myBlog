@@ -1,20 +1,12 @@
-/*
- * @Author: superRice
- * @Date: 2025-04-11 16:12:52
- * @LastEditors: soBigRice soBigRice@users.noreply.github.com
- * @LastEditTime: 2025-04-13 09:10:20
- * @FilePath: /satelliteForRice/src/components/NavigationBar.jsx
- * @Description:
- * Do your best to be yourself
- * Copyright (c) 2025 by superRice, All Rights Reserved.
- */
 import "./NavigationBar.css";
 import { useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function NavigationBar() {
   const navbarRef = useRef(null); // 导航栏 DOM 引用
   const indicatorRef = useRef(null); // 指示器 DOM 引用
+  const location = useLocation();
+  console.log(location.pathname);
 
   // 导航按钮数据
   const buttons = [
@@ -83,7 +75,9 @@ function NavigationBar() {
 
       {buttons.map((btn, index) => (
         <Link
-          className="navbar-link"
+          className={`navbar-link ${
+            location.pathname === btn.url ? "active" : ""
+          }`}
           to={btn.url}
           key={index}
           onClick={() => handleClick(btn)}
@@ -91,15 +85,6 @@ function NavigationBar() {
         >
           {btn.name}
         </Link>
-        // <a
-        //   href={btn.url}
-        //   key={index}
-        //   onMouseEnter={handleMouseEnter}
-        //   onClick={() => handleClick(btn)}
-        //   data-text={btn.name}
-        // >
-        //   {btn.name}
-        // </a>
       ))}
     </div>
   );
