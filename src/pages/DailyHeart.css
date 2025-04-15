@@ -8,8 +8,8 @@
 }
 
 .dailyHeart-area {
-  width: 70%;
-  height: 70%;
+  /* width: 70%;
+  height: 70%; */
   display: flex;
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(15px);
@@ -23,12 +23,6 @@
   align-items: center;
 }
 
-.dailyHeart-content {
-  width: 80%;
-  /* 首行缩紧 */
-  text-indent: 2em;
-}
-
 .dailyHeart-area button {
   background-color: rgba(166, 166, 166, 0.467);
   border-radius: 15px;
@@ -39,4 +33,27 @@
 
   /* 背景阴影 */
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  /* width: 120px; */
+  border: 2px solid rgb(255, 255, 255); /* 线宽、线型、颜色 */
+  /* 上 右 下 左 */
+  margin: 0 0 20px 0;
+  z-index: 2;
+}
+.dailyHeart-area button:hover {
+  color: aquamarine;
+  border: 2px solid rgb(0, 255, 208); /* 线宽、线型、颜色 */
+}
+
+.dailyHeart-content {
+  /* 首行缩紧 */
+  text-indent: 2em;
+  /* 两边之间间距变大 */
+  padding: 0 20px;
+}
+
+.dailyHeart-author {
+  margin-top: 10px;
+  font-size: 1.2em;
+  /* 右对其 */
+  text-align: left;
 }

@@ -2,7 +2,7 @@
  * @Author: superRice
  * @Date: 2025-04-12 16:00:27
  * @LastEditors: soBigRice soBigRice@users.noreply.github.com
- * @LastEditTime: 2025-04-12 17:09:15
+ * @LastEditTime: 2025-04-15 23:22:12
  * @FilePath: /satelliteForRice/src/pages/DailyHeart.jsx
  * @Description:
  * Do your best to be yourself
@@ -39,7 +39,16 @@ const DailyHeart = () => {
     <>
       <div className="dailyHeart">
         <div className="dailyHeart-area">
-          <h1 className="dailyHeart-content">{dailyData.content}</h1>
+          <div className="dailyHeart-content">
+            <h1>{dailyData.content}</h1>
+          </div>
+          <div className="dailyHeart-author">
+            <h4 className="dailyHeart-author-name">
+              作者:{dailyData.author}
+              <br />
+              来源：{dailyData.from}
+            </h4>
+          </div>
 
           <button onClick={updateDailyLanguage}>换一换</button>
         </div>
