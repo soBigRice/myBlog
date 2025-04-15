@@ -2,7 +2,7 @@
   position: relative;
   display: flex;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(189, 189, 189, 0.302);
   backdrop-filter: blur(15px);
 
   -webkit-backdrop-filter: blur(10px);
@@ -15,6 +15,7 @@
   -ms-border-radius: 12px;
   -o-border-radius: 12px;
   box-shadow: 0 0 10px rgb(255, 255, 255, 0.2);
+  border: 1px solid rgba(163, 163, 163, 0.322); /* 线宽、线型、颜色 */
 }
 
 .navbar .navbar-link {
