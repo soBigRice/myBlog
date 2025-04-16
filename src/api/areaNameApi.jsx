@@ -1,8 +1,8 @@
 /*
  * @Author: superRice
  * @Date: 2025-04-16 22:30:03
- * @LastEditors: superRice 1246333567@qq.com
- * @LastEditTime: 2025-04-16 22:44:31
+ * @LastEditors: superRice 63463970+soBigRice@users.noreply.github.com
+ * @LastEditTime: 2025-04-17 00:53:42
  * @FilePath: /satelliteForRice/src/api/areaNameApi.jsx
  * @Description:
  * Do your best to be yourself
@@ -26,7 +26,7 @@ const getAreaNameByCoordinate = (latitude, longitude, callback) => {
     .then((res) => res.json())
     .then((data) => {
       const location = data.results[0];
-      console.log("中文地址：", location);
+      //   console.log("中文地址：", location);
       // 更多字段可以参考 location.components
       callback && callback(location.components);
     })

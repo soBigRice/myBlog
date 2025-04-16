@@ -1,4 +1,4 @@
-import { getLocation } from "./Locater";
+import { getLocation } from "./locater";
 
 export default class Utils {
   /**
