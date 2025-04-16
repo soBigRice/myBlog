@@ -32,7 +32,11 @@
   width: 100%;
   height: 100%;
   background-image: url("/public/Image/sceneBackground/bg.jpg");
-  background-size: 100%;
+  /* background-size: 100%; */
+  /* 图片高度自适应。比例不变 */
+  background-position: center;
+  background-size: cover;
+
   background-repeat: no-repeat;
   background-attachment: fixed;
 }

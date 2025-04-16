@@ -1,8 +1,8 @@
 /*
  * @Author: superRice
  * @Date: 2025-04-11 11:20:15
- * @LastEditors: soBigRice soBigRice@users.noreply.github.com
- * @LastEditTime: 2025-04-13 11:03:02
+ * @LastEditors: superRice 1246333567@qq.com
+ * @LastEditTime: 2025-04-16 21:02:48
  * @FilePath: /satelliteForRice/vite.config.js
  * @Description:
  * Do your best to be yourself
@@ -28,6 +28,7 @@ export default defineConfig(({ command, mode }) => {
     plugins: [react()],
     server: {
       host: "0.0.0.0",
+      cors: true,
     },
     base: env.VITE_APP_BASE_URL || "/",
     resolve: {},
