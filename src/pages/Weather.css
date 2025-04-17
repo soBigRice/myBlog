@@ -24,3 +24,7 @@
   /* 内边距 */
   padding: 20px;
 }
+
+.weather-area h2 {
+  color: darkorange;
+}

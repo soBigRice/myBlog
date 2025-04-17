@@ -25,13 +25,20 @@
   text-decoration: none;
   font-size: 18px;
   color: rgba(255, 255, 255, 0.5);
+  font-family: "shouxie", sans-serif;
 }
 
 .navbar .navbar-link:hover {
-  color: rgb(255, 255, 255);
-  /*可以叠加多层制造厚重感*/
-  /* filter: blur(10px); */
-  /* -webkit-filter: blur(10px); */
+  font-family: "shouxie", sans-serif;
+  color: transparent;
+  background: linear-gradient(135deg, #07ff98, #ff0000, #8800ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* 加点玻璃味的高光与阴影 */
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.2));
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 .navbar .navbar-link::before {
   content: attr(data-text);
@@ -44,9 +51,16 @@
   -webkit-filter: blur(10px);
 }
 .navbar .navbar-link:active {
-  color: rgb(144, 255, 240);
-  text-shadow: 0 0 3px rgb(144, 255, 240), 0 0 6px rgb(144, 255, 240),
-    0 0 9px rgb(144, 255, 240);
+  font-family: "shouxie", sans-serif;
+  color: transparent;
+  background: linear-gradient(135deg, #ff07da, #8cff00, #009dff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* 加点玻璃味的高光与阴影 */
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.2));
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 /* 指示器默认状态：矩形带圆角 */
