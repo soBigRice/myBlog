@@ -51,6 +51,21 @@
   padding: 0 20px;
 }
 
+.dailyHeart-content-text {
+  font-size: 64px;
+  font-weight: 900;
+  font-family: "shouxie", sans-serif;
+  color: transparent;
+  background: linear-gradient(135deg, #ff6ec4, #7873f5, #4ade80);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* 加点玻璃味的高光与阴影 */
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.2));
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
 .dailyHeart-author {
   margin-top: 10px;
   font-size: 1.2em;

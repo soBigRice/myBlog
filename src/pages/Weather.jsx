@@ -2,7 +2,7 @@
  * @Author: superRice
  * @Date: 2025-04-16 18:24:39
  * @LastEditors: superRice 63463970+soBigRice@users.noreply.github.com
- * @LastEditTime: 2025-04-17 01:03:11
+ * @LastEditTime: 2025-04-17 11:55:31
  * @FilePath: /satelliteForRice/src/pages/Weather.jsx
  * @Description:
  * Do your best to be yourself
@@ -58,8 +58,7 @@ const DailyWeather = () => {
         <div className="weather-area">
           <h1>天气</h1>
           <h2>
-            地区:{areaData.country}-{areaData.state}-{areaData.city}-
-            {areaData.town}
+            {areaData.country}-{areaData.state}-{areaData.city}-{areaData.town}
           </h2>
           <h2>气温:{weatherData.temperature2m}摄氏度</h2>
         </div>
