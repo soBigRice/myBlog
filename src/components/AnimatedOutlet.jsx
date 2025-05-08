@@ -5,6 +5,7 @@ import { CSSTransition, SwitchTransition } from "react-transition-group";
 import NavigationBar from "./NavigationBar";
 import BottomBar from "./BottomBar";
 import "./AnimatedOutlet.css";
+import Background from "./Background";
 
 function AnimatedOutlet() {
   const location = useLocation();
@@ -16,6 +17,7 @@ function AnimatedOutlet() {
       <div className="header">
         <NavigationBar />
       </div>
+      <Background />
       <div className="content">
         <SwitchTransition>
           <CSSTransition
@@ -32,6 +34,7 @@ function AnimatedOutlet() {
           </CSSTransition>
         </SwitchTransition>
       </div>
+
       <div className="footer">
         <BottomBar />
       </div>

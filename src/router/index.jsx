@@ -16,6 +16,7 @@ import DailyHeart from "../pages/DailyHeart";
 import NoFound from "../pages/NoFound"; // 新增导入
 import AnimatedOutlet from "../components/AnimatedOutlet";
 import DailyWeather from "../pages/Weather";
+import Blog from "../pages/Blog";
 
 const router = createHashRouter([
   {
@@ -33,6 +34,10 @@ const router = createHashRouter([
       {
         path: "weather",
         element: <DailyWeather />,
+      },
+      {
+        path: "blog",
+        element: <Blog />,
       },
       // 添加一个 catch-all 路由
       {

@@ -1,8 +1,17 @@
+/*
+ * @Author: superRice
+ * @Date: 2025-04-11 11:20:15
+ * @LastEditors: superRice 63463970+soBigRice@users.noreply.github.com
+ * @LastEditTime: 2025-05-03 15:51:20
+ * @FilePath: /satelliteForRice/src/App.jsx
+ * @Description:
+ * Do your best to be yourself
+ * Copyright (c) 2025 by superRice, All Rights Reserved.
+ */
 // src/App.jsx
 import "./App.css";
 import { RouterProvider } from "react-router-dom";
 import router from "./router";
-
 function App() {
   return (
     <div className="main">
